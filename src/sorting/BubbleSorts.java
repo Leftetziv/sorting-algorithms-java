@@ -161,29 +161,30 @@ public class BubbleSorts {
     }
 
     //version 1
-//    public static void BubbleSortsByAll(List<TShirt> shirts) {
-//        TShirt temp;
-//
-//        for (int i = 1; i < shirts.size(); i++) {
-//            for (int j = 0; j < shirts.size() - i; j++) {
-//                if (shirts.get(j).getColor().compareTo(shirts.get(j + 1).getColor()) > 0) {
-//                    temp = shirts.get(j);
-//                    shirts.set(j, shirts.get(j + 1));
-//                    shirts.set(j + 1, temp);
-//                } else if (shirts.get(j).getColor().equals(shirts.get(j + 1).getColor())) {
-//                    if (shirts.get(j).getSize().compareTo(shirts.get(j + 1).getSize()) > 0) {
-//                        temp = shirts.get(j);
-//                        shirts.set(j, shirts.get(j + 1));
-//                        shirts.set(j + 1, temp);
-//                    } else if (shirts.get(j).getSize().equals(shirts.get(j + 1).getSize())) {
-//                        if (shirts.get(j).getFabric().compareTo(shirts.get(j + 1).getFabric()) > 0) {
-//                            temp = shirts.get(j);
-//                            shirts.set(j, shirts.get(j + 1));
-//                            shirts.set(j + 1, temp);
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
+    /*
+    public static void BubbleSortsByAll(List<TShirt> shirts) {
+        TShirt temp;
+
+        for (int i = 1; i < shirts.size(); i++) {
+            for (int j = 0; j < shirts.size() - i; j++) {
+                if (shirts.get(j).getColor().compareTo(shirts.get(j + 1).getColor()) > 0) {
+                    temp = shirts.get(j);
+                    shirts.set(j, shirts.get(j + 1));
+                    shirts.set(j + 1, temp);
+                } else if (shirts.get(j).getColor().equals(shirts.get(j + 1).getColor())) {
+                    if (shirts.get(j).getSize().compareTo(shirts.get(j + 1).getSize()) > 0) {
+                        temp = shirts.get(j);
+                        shirts.set(j, shirts.get(j + 1));
+                        shirts.set(j + 1, temp);
+                    } else if (shirts.get(j).getSize().equals(shirts.get(j + 1).getSize())) {
+                        if (shirts.get(j).getFabric().compareTo(shirts.get(j + 1).getFabric()) > 0) {
+                            temp = shirts.get(j);
+                            shirts.set(j, shirts.get(j + 1));
+                            shirts.set(j + 1, temp);
+                        }
+                    }
+                }
+            }
+        }
+    }*/
 }

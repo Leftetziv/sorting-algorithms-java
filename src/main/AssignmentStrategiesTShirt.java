@@ -11,6 +11,7 @@ import model.Cart;
 import model.TShirt;
 import sorting.BubbleSorts;
 import sorting.BucketSort;
+import sorting.QuickSort;
 
 /**
  *
@@ -25,7 +26,7 @@ public class AssignmentStrategiesTShirt {
 
         Cart cart = Cart.getCart();
 
-        cart.fillCart(500);
+        cart.fillCart(50);
 
         List<TShirt> ShowTShirts = cart.ShowTShirts();
         cart.payTotal();
@@ -82,19 +83,41 @@ public class AssignmentStrategiesTShirt {
 //        System.out.println("\n BUCKET-SORT BY FABRIC DSC>>>>>>>>>>>>>>>>>>>>");
 //        cart.ShowTShirts();
 //
-//        BucketSort.BucketSortsByAllAsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY ALL ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BucketSort.BucketSortsByAllDsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY ALL DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+        BucketSort.BucketSortsByAllAsc(ShowTShirts);
+        System.out.println("\n BUCKET-SORT BY ALL ASC>>>>>>>>>>>>>>>>>>>>");
+        cart.ShowTShirts();
+        BucketSort.BucketSortsByAllDsc(ShowTShirts);
+        System.out.println("\n BUCKET-SORT BY ALL DSC>>>>>>>>>>>>>>>>>>>>");
+        cart.ShowTShirts();
 //
 //QuickSorts:
-
-
-
-
-
+//        QuickSort.QuickSortsBySizeAsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY SIZE ASC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
+//        QuickSort.QuickSortsBySizeDsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY SIZE DSC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
+//        
+//        QuickSort.QuickSortsByColorAsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY COLOR ASC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
+//        QuickSort.QuickSortsByColorDsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY COLOR DSC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
+//
+//        QuickSort.QuickSortsByFabricAsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY FABRIC ASC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
+//        QuickSort.QuickSortsByFabricDsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY FABRIC DSC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
+//
+//        QuickSort.QuickSortsByAllAsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY ALL ASC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
+//        QuickSort.QuickSortsByAllDsc(ShowTShirts);
+//        System.out.println("\n QUICK-SORT BY ALL DSC>>>>>>>>>>>>>>>>>>>");
+//        cart.ShowTShirts();
     }
 
 }

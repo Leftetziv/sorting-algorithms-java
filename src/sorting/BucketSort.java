@@ -11,7 +11,6 @@ import model.Color;
 import model.Fabric;
 import model.Size;
 import model.TShirt;
-import static sorting.BucketSort.BucketSortsBySizeLimited;
 
 /**
  *
@@ -142,8 +141,7 @@ public class BucketSort {
         BucketSortsByFabricLimited(shirts, 0, shirts.size(), false);
     }
 
-
-     protected static void BucketSortsByAll(List<TShirt> shirts, boolean order) {
+    protected static void BucketSortsByAll(List<TShirt> shirts, boolean order) {
         if (order) {
             BucketSortsByColorAsc(shirts);
         } else {
@@ -155,7 +153,7 @@ public class BucketSort {
         for (int i = 1; i < shirts.size(); i++) {
             if (!shirts.get(i).getColor().equals(color)) {
                 BucketSortsBySizeLimited(shirts, k, i, order);
-                k = i ;
+                k = i;
                 color = shirts.get(i).getColor();
             }
         }
@@ -166,7 +164,7 @@ public class BucketSort {
         for (int i = 1; i < shirts.size(); i++) {
             if (!shirts.get(i).getSize().equals(size)) {
                 BucketSortsByFabricLimited(shirts, k, i, order);
-                k = i ;
+                k = i;
                 size = shirts.get(i).getSize();
             }
         }
@@ -180,7 +178,5 @@ public class BucketSort {
     public static void BucketSortsByAllDsc(List<TShirt> shirts) {
         BucketSortsByAll(shirts, false);
     }
-    
-    
-    
+
 }
