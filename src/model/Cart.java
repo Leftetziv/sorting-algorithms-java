@@ -75,10 +75,21 @@ public class Cart {
         }
     }
 
-    public List<TShirt> ShowTShirts() {
+    public void ShowTShirts() {
         for (TShirt t:tshirts) {
             System.out.println(t);
         }
+    }
+    
+    public List<TShirt> getTShirts() {
         return tshirts;
+    }
+    
+    public List<TShirt> clone() {
+        List<TShirt> clone = new ArrayList();
+        for (TShirt t:tshirts) {
+            clone.add(t);
+        }
+        return clone;
     }
 }

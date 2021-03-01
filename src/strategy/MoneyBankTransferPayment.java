@@ -16,7 +16,6 @@ public class MoneyBankTransferPayment implements PaymentStrategy {
     }
 
     
-    
     @Override
     public void pay(double price) {
         System.out.println("Bank account with IBAN: " + IBAN + " paid the amount of: $" + String.format("%.2f",price));

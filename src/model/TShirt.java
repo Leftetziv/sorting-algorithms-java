@@ -43,6 +43,16 @@ public class TShirt {
         this.size = size;
         this.fabric = fabric;
     }
+    
+    public TShirt(TShirt t) {
+        this.name = t.getName();
+        this.price = t.getPrice();
+        this.color = t.getColor();
+        this.size = t.getSize();
+        this.fabric = t.getFabric();
+    }
+    
+    
 
     public double getPrice() {
         return price;

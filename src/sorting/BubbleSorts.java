@@ -32,6 +32,7 @@ public class BubbleSorts {
 //        return arr;
 //    }
     protected static void BubbleSortsByFabricLimited(List<TShirt> shirts, int start, int end, boolean order) {
+
         TShirt temp;
 
         for (int k = 1, i = start; i < end; i++, k++) {
@@ -54,11 +55,23 @@ public class BubbleSorts {
     }
 
     public static void BubbleSortsByFabricAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsByFabricLimited(shirts, 1, shirts.size(), true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BubbleSortsByFabricAsc>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BubbleSortsByFabricDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsByFabricLimited(shirts, 1, shirts.size(), false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BubbleSortsByFabricDsc>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void BubbleSortsBySizeLimited(List<TShirt> shirts, int start, int end, boolean order) {
@@ -84,11 +97,23 @@ public class BubbleSorts {
     }
 
     public static void BubbleSortsBySizeAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsBySizeLimited(shirts, 1, shirts.size(), true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("\nBubbleSortsBySizeAsc>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BubbleSortsBySizeDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsBySizeLimited(shirts, 1, shirts.size(), false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BubbleSortsBySizeDsc>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void BubbleSortsByColorLimited(List<TShirt> shirts, int start, int end, boolean order) {
@@ -114,19 +139,31 @@ public class BubbleSorts {
     }
 
     public static void BubbleSortsByColorAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsByColorLimited(shirts, 1, shirts.size(), true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BubbleSortsByColorAsc>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BubbleSortsByColorDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsByColorLimited(shirts, 1, shirts.size(), false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BubbleSortsByColorDsc>>> \t" + totalTime / 1000000.0);
     }
 
     //version 2
     protected static void BubbleSortsByAll(List<TShirt> shirts, boolean order) {
         if (order) {
-            BubbleSortsByColorAsc(shirts);
+            BubbleSortsByColorLimited(shirts, 1, shirts.size(), true);
         } else {
-            BubbleSortsByColorDsc(shirts);
+            BubbleSortsByColorLimited(shirts, 1, shirts.size(), false);
         }
 
         Color color = shirts.get(0).getColor();
@@ -153,11 +190,23 @@ public class BubbleSorts {
     }
 
     public static void BubbleSortsByAllAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsByAll(shirts, true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BubbleSortsByAllAsc>>>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BubbleSortsByAllDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BubbleSortsByAll(shirts, false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BubbleSortsByAllDsc>>>>> \t" + totalTime / 1000000.0);
     }
 
     //version 1

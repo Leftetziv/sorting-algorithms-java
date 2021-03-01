@@ -11,6 +11,7 @@ import model.Color;
 import model.Fabric;
 import model.Size;
 import model.TShirt;
+import static sorting.BubbleSorts.BubbleSortsByFabricLimited;
 
 /**
  *
@@ -52,11 +53,23 @@ public class BucketSort {
     }
 
     public static void BucketSortsByColorAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsByColorLimited(shirts, 0, shirts.size(), true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsByColorAsc>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BucketSortsByColorDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsByColorLimited(shirts, 0, shirts.size(), false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsByColorDsc>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void BucketSortsBySizeLimited(List<TShirt> shirts, int start, int end, boolean order) {
@@ -93,11 +106,23 @@ public class BucketSort {
     }
 
     public static void BucketSortsBySizeAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsBySizeLimited(shirts, 0, shirts.size(), true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsBySizeAsc>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BucketSortsBySizeDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsBySizeLimited(shirts, 0, shirts.size(), false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsBySizeDsc>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void BucketSortsByFabricLimited(List<TShirt> shirts, int start, int end, boolean order) {
@@ -134,18 +159,30 @@ public class BucketSort {
     }
 
     public static void BucketSortsByFabricAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsByFabricLimited(shirts, 0, shirts.size(), true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsByFabricAsc>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BucketSortsByFabricDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsByFabricLimited(shirts, 0, shirts.size(), false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsByFabricDsc>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void BucketSortsByAll(List<TShirt> shirts, boolean order) {
         if (order) {
-            BucketSortsByColorAsc(shirts);
+            BucketSortsByColorLimited(shirts, 0, shirts.size(), true);
         } else {
-            BucketSortsByColorDsc(shirts);
+            BucketSortsByColorLimited(shirts, 0, shirts.size(), false);
         }
 
         Color color = shirts.get(0).getColor();
@@ -172,11 +209,23 @@ public class BucketSort {
     }
 
     public static void BucketSortsByAllAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsByAll(shirts, true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsByAllAsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     public static void BucketSortsByAllDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         BucketSortsByAll(shirts, false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("BucketSortsByAllDsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
 }

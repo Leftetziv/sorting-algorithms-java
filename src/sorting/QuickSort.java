@@ -18,11 +18,23 @@ public class QuickSort {
 
     /* By Size*/
     public static void QuickSortsBySizeAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         quickSortSize(shirts, 0, shirts.size() - 1, true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsBySizeAsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     public static void QuickSortsBySizeDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         quickSortSize(shirts, 0, shirts.size() - 1, false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsBySizeDsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void quickSortSize(List<TShirt> shirts, int low, int high, boolean order) {
@@ -30,7 +42,7 @@ public class QuickSort {
 
             int pi = partitionSize(shirts, low, high, order);
 
-            quickSortSize(shirts, low, pi - 1, order);  
+            quickSortSize(shirts, low, pi - 1, order);
             quickSortSize(shirts, pi + 1, high, order);
         }
     }
@@ -69,11 +81,23 @@ public class QuickSort {
 
     /* By Color*/
     public static void QuickSortsByColorAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         quickSortColor(shirts, 0, shirts.size() - 1, true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsByColorAsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     public static void QuickSortsByColorDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         quickSortColor(shirts, 0, shirts.size() - 1, false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsByColorDsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void quickSortColor(List<TShirt> shirts, int low, int high, boolean order) {
@@ -88,7 +112,6 @@ public class QuickSort {
 
     protected static int partitionColor(List<TShirt> shirts, int low, int high, boolean order) {
         TShirt pivot = shirts.get(high);
-
 
         int i = (low - 1);
 
@@ -121,11 +144,23 @@ public class QuickSort {
 
     /* By fabric*/
     public static void QuickSortsByFabricAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         quickSortFabric(shirts, 0, shirts.size() - 1, true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsByFabricAsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     public static void QuickSortsByFabricDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         quickSortFabric(shirts, 0, shirts.size() - 1, false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsByFabricDsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void quickSortFabric(List<TShirt> shirts, int low, int high, boolean order) {
@@ -133,15 +168,14 @@ public class QuickSort {
 
             int pi = partitionFabric(shirts, low, high, order);
 
-            quickSortFabric(shirts, low, pi - 1, order);  
+            quickSortFabric(shirts, low, pi - 1, order);
             quickSortFabric(shirts, pi + 1, high, order);
         }
     }
 
     protected static int partitionFabric(List<TShirt> shirts, int low, int high, boolean order) {
-        
-        TShirt pivot = shirts.get(high);
 
+        TShirt pivot = shirts.get(high);
 
         int i = (low - 1);
 
@@ -149,7 +183,7 @@ public class QuickSort {
         for (int j = low; j < high; j++) {
             if (order) {
                 if (shirts.get(j).getFabric().ordinal() <= pivot.getFabric().ordinal()) {
-                    i++; 
+                    i++;
                     temp = shirts.get(j);
                     shirts.set(j, shirts.get(i));
                     shirts.set(i, temp);
@@ -173,18 +207,30 @@ public class QuickSort {
 
     /* By All*/
     public static void QuickSortsByAllAsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         QuickSortsByAll(shirts, true);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsByAllAsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     public static void QuickSortsByAllDsc(List<TShirt> shirts) {
+        long startTime = System.nanoTime();
+
         QuickSortsByAll(shirts, false);
+
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("QuickSortsByAllDsc>>>>>> \t" + totalTime / 1000000.0);
     }
 
     protected static void QuickSortsByAll(List<TShirt> shirts, boolean order) {
         if (order) {
-            QuickSortsByColorAsc(shirts);
+            quickSortColor(shirts, 0, shirts.size() - 1, true);
         } else {
-            QuickSortsByColorDsc(shirts);
+            quickSortColor(shirts, 0, shirts.size() - 1, false);
         }
 
         Color color = shirts.get(0).getColor();
@@ -202,12 +248,12 @@ public class QuickSort {
         k = 0;
         for (int i = 1; i < shirts.size(); i++) {
             if (!shirts.get(i).getSize().equals(size)) {
-                quickSortFabric(shirts, k, i-1, order);
+                quickSortFabric(shirts, k, i - 1, order);
                 k = i;
                 size = shirts.get(i).getSize();
             }
         }
-        quickSortFabric(shirts, k, shirts.size()-1, order);
+        quickSortFabric(shirts, k, shirts.size() - 1, order);
     }
 
 }

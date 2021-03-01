@@ -5,6 +5,7 @@
  */
 package main;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import model.Cart;
@@ -12,6 +13,7 @@ import model.TShirt;
 import sorting.BubbleSorts;
 import sorting.BucketSort;
 import sorting.QuickSort;
+import util.Utility;
 
 /**
  *
@@ -26,98 +28,130 @@ public class AssignmentStrategiesTShirt {
 
         Cart cart = Cart.getCart();
 
-        cart.fillCart(50);
+        cart.fillCart(1000);
 
-        List<TShirt> ShowTShirts = cart.ShowTShirts();
-        cart.payTotal();
+        List<TShirt> tShirts = cart.getTShirts();
+//        cart.ShowTShirts();
+//        cart.payTotal();
 
-//BubbleSorts:
-//        BubbleSorts.BubbleSortsBySizeAsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY SIZE ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BubbleSorts.BubbleSortsBySizeDsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY SIZE DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//
-//        BubbleSorts.BubbleSortsByColorAsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY COLOR ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BubbleSorts.BubbleSortsByColorDsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY COLOR DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+        List<TShirt> toSort;
+
+
+        for (int i = 1; i <= 8; i++) {
+            toSort = cart.clone();
+            
+//            System.out.println("\nunsorted:");
+//            for (TShirt t : toSort) {
+//                System.out.println(t);
+//            }
+            
+            BubbleSorts.BubbleSortsByAllAsc(toSort);
+            
+//            System.out.println("sorted:");
+//            for (TShirt t : toSort) {
+//                System.out.println(t);
+//            }
+        }
 //        
-//        BubbleSorts.BubbleSortsByFabricAsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY FABRIC ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BubbleSorts.BubbleSortsByFabricDsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY FABRIC DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+//BubbleSorts:
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsBySizeAsc(toSort);
+//        Utility.printList(toSort);
 //
-//        BubbleSorts.BubbleSortsByAllAsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY ALL ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BubbleSorts.BubbleSortsByAllDsc(ShowTShirts);
-//        System.out.println("\n BUBBLE-SORT BY ALL DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsBySizeDsc(toSort);
+//        Utility.printList(toSort);
 //
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsByColorAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsByColorDsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsByFabricAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsByFabricDsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsByAllAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BubbleSorts.BubbleSortsByAllDsc(toSort);
+//        Utility.printList(toSort);
 //
 //BacketSorts:
-//        BucketSort.BucketSortsBySizeAsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY SIZE ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BucketSort.BucketSortsBySizeDsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY SIZE DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        
-//        BucketSort.BucketSortsByColorAsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY COLOR ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BucketSort.BucketSortsByColorDsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY COLOR DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        
-//        BucketSort.BucketSortsByFabricAsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY FABRIC ASC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        BucketSort.BucketSortsByFabricDsc(ShowTShirts);
-//        System.out.println("\n BUCKET-SORT BY FABRIC DSC>>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsBySizeAsc(toSort);
+//        Utility.printList(toSort);
 //
-        BucketSort.BucketSortsByAllAsc(ShowTShirts);
-        System.out.println("\n BUCKET-SORT BY ALL ASC>>>>>>>>>>>>>>>>>>>>");
-        cart.ShowTShirts();
-        BucketSort.BucketSortsByAllDsc(ShowTShirts);
-        System.out.println("\n BUCKET-SORT BY ALL DSC>>>>>>>>>>>>>>>>>>>>");
-        cart.ShowTShirts();
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsBySizeDsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsByColorAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsByColorDsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsByFabricAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsByFabricDsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsByAllAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        BucketSort.BucketSortsByAllDsc(toSort);
+//        Utility.printList(toSort);
 //
 //QuickSorts:
-//        QuickSort.QuickSortsBySizeAsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY SIZE ASC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        QuickSort.QuickSortsBySizeDsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY SIZE DSC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        
-//        QuickSort.QuickSortsByColorAsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY COLOR ASC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        QuickSort.QuickSortsByColorDsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY COLOR DSC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsBySizeAsc(toSort);
+//        Utility.printList(toSort);
 //
-//        QuickSort.QuickSortsByFabricAsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY FABRIC ASC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        QuickSort.QuickSortsByFabricDsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY FABRIC DSC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsBySizeDsc(toSort);
+//        Utility.printList(toSort);
 //
-//        QuickSort.QuickSortsByAllAsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY ALL ASC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
-//        QuickSort.QuickSortsByAllDsc(ShowTShirts);
-//        System.out.println("\n QUICK-SORT BY ALL DSC>>>>>>>>>>>>>>>>>>>");
-//        cart.ShowTShirts();
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsByColorAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsByColorDsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsByFabricAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsByFabricDsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsByAllAsc(toSort);
+//        Utility.printList(toSort);
+//
+//        toSort = cart.clone();
+//        QuickSort.QuickSortsByAllDsc(toSort);
+//        Utility.printList(toSort);
+
     }
 
 }
